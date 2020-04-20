@@ -1,5 +1,7 @@
 ![](https://i.imgur.com/GQflPGL.png)
 
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/microlinkhq/lighthouse-viewer)
+
 ## License
 
 **lighthouse-viewer** © [microlink.io](https://microlink.io), released under the [MIT](https://github.com/microlinkhq/lighthouse-viewer/blob/master/LICENSE.md) License.<br>
