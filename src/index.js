@@ -2,12 +2,9 @@
 
 const toQuery = require('to-query')()
 const { send } = require('micri')
-const path = require('path')
 const got = require('got')
 
-const ReportGenerator = require(path.resolve(
-  'node_modules/lighthouse/lighthouse-core/report/report-generator'
-))
+const ReportGenerator = require('lighthouse/lighthouse-core/report/report-generator')
 
 const help = `<!doctype html>
 <html>
