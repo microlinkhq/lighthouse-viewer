@@ -6,10 +6,6 @@
       "use": "@now/node"
     }
   ],
-  "env": {
-    "NODE_ENV": "production",
-    "DEBUG": "lighthouse-viewer*"
-  },
   "routes": [
     {
       "src": "/robots.txt",
