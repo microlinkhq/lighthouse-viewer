@@ -30,7 +30,7 @@
   "dependencies": {
     "debug-logfmt": "~1.0.4",
     "got": "~11.5.1",
-    "lighthouse": "~6.1.0",
+    "lighthouse": "~6.1.1",
     "micri": "~4.2.0",
     "to-query": "~1.6.0"
   },
