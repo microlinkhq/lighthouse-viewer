@@ -29,9 +29,9 @@
   ],
   "dependencies": {
     "debug-logfmt": "~1.0.4",
-    "got": "~11.6.0",
+    "got": "~11.6.2",
     "lighthouse": "~6.3.0",
-    "micri": "~4.2.0",
+    "micri": "~4.2.1",
     "to-query": "~1.6.0"
   },
   "devDependencies": {
