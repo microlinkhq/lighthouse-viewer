@@ -3,6 +3,7 @@
 const toQuery = require('to-query')()
 const { send } = require('micri')
 const got = require('got')
+const get = require('dlv')
 
 const ReportGenerator = require('lighthouse/lighthouse-core/report/report-generator')
 
@@ -39,7 +40,10 @@ module.exports = async (req, res) => {
   res.setHeader('content-type', 'text/html; charset=utf-8')
   const { url } = toQuery(req.url)
   if (!url) return send(res, 200, help)
-  const data = await got(url).json()
+
+  const json = await got(url).json()
+  const data = get(json, 'data.insights.lighthouse') || json
   const html = ReportGenerator.generateReportHtml(data)
+
   return send(res, 200, html)
 }
