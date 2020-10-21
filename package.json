@@ -2,7 +2,7 @@
   "name": "lighthouse-viewer",
   "description": "Lighthouse Viewer as service",
   "homepage": "https://lighthouse-viewer.microlink.io",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "main": "index.js",
   "author": {
     "email": "hello@microlink.io",
