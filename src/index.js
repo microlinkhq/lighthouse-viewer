@@ -38,10 +38,14 @@ const help = `<!doctype html>
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('content-type', 'text/html; charset=utf-8')
+
   const { url } = toQuery(req.url)
   if (!url) return send(res, 200, help)
 
-  const json = await got(url).json()
+  const json = await got(url, {
+    headers: { 'x-api-key': req.headers['x-api-key'] }
+  }).json()
+
   const data = get(json, 'data.insights.lighthouse') || json
   const html = ReportGenerator.generateReportHtml(data)
 
