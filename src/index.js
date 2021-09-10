@@ -5,7 +5,7 @@ const { send } = require('micri')
 const got = require('got')
 const get = require('dlv')
 
-const ReportGenerator = require('lighthouse/lighthouse-core/report/report-generator')
+const ReportGenerator = require('lighthouse/report/generator/report-generator')
 
 const help = `<!doctype html>
 <html>
