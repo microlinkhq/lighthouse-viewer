@@ -1,11 +1,12 @@
 'use strict'
 
 const toQuery = require('to-query')()
-const { send } = require('micri')
+const send = require('send-http')
 const got = require('got')
 const get = require('dlv')
 
-const ReportGenerator = require('lighthouse/report/generator/report-generator')
+const generateReport = (...args) =>
+  import('lighthouse').then(mod => mod.generateReport(...args))
 
 const help = `<!doctype html>
 <html>
@@ -47,7 +48,7 @@ module.exports = async (req, res) => {
   }).json()
 
   const data = get(json, 'data.insights.lighthouse') || json
-  const html = ReportGenerator.generateReportHtml(data)
+  const html = await generateReport(data)
 
   return send(res, 200, html)
 }
