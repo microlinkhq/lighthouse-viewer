@@ -1,11 +1,10 @@
 'use strict'
 
 const debug = require('debug-logfmt')('lighthouse-viewer')
-const { default: micri } = require('micri')
-const fn = require('.')
+const { createServer } = require('http')
 
 const port = process.env.PORT || process.env.port || 3000
-const server = micri(fn)
+const server = createServer(require('.'))
 
 server.on('error', err => {
   debug({ status: 'error', message: err.message, trace: err.stack })
