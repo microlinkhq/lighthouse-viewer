@@ -2,8 +2,29 @@
 
 const toQuery = require('to-query')()
 const send = require('send-http')
+const path = require('path')
 const got = require('got')
 const get = require('dlv')
+const fs = require('fs')
+
+/**
+ * Include some lighthouse additional files not included as part of Vercel deployment
+ */
+;(() => {
+  const lighthousePath = path.resolve(__dirname, '../node_modules/lighthouse')
+  ;[
+    'shared/localization/locales/',
+    'flow-report/assets/',
+    'dist/report/'
+  ].forEach(relativePath => {
+    const folderPath = path.resolve(lighthousePath, relativePath)
+    const files = fs.readdirSync(folderPath)
+    files.forEach(file => {
+      const filepath = path.resolve(folderPath, file)
+      fs.readFileSync(filepath)
+    })
+  })
+})()
 
 const generateReport = (...args) =>
   import('lighthouse').then(mod => mod.generateReport(...args))
