@@ -28,7 +28,7 @@
     "viewer"
   ],
   "dependencies": {
-    "debug-logfmt": "~1.0.4",
+    "debug-logfmt": "~1.2.0",
     "dlv": "~1.1.3",
     "got": "~11.8.6",
     "lighthouse": "~11.1.0",
