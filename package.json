@@ -31,7 +31,7 @@
     "debug-logfmt": "~1.2.0",
     "dlv": "~1.1.3",
     "got": "~11.8.6",
-    "lighthouse": "~12.4.0",
+    "lighthouse": "~12.5.1",
     "send-http": "~1.0.2",
     "to-query": "~1.6.12"
   },
